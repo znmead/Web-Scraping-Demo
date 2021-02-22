@@ -76,3 +76,6 @@ li {
   initial-value: 0deg;
   inherits: false;
 }
+
+/* border animation inspired by
+ https://www.bram.us/2021/01/29/animating-a-css-gradient-border/ */ 
