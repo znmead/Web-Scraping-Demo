@@ -50,7 +50,7 @@ function App() {
       <div>
         <ul>
           {names.map((name) => {
-            return <li key={names.name}>{names.name}</li>;
+            return <li key={name}>{name}</li>;
           })}
         </ul>
       </div>
