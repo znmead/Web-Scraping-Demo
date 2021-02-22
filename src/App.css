@@ -40,6 +40,7 @@
 
 .container {
   background-color: #61dafb;
+  display: grid;
 }
 
 ul {
@@ -55,9 +56,23 @@ ul {
 
 li {
   margin: 10px;
-  padding: 5px 5px;
-  border: 2px solid black;
-  border-radius: 12.5%;
-  background-color: lightslategray;
+  padding: 0px 5px;
+  border: 2em solid;
+  --angle: 0deg;
+  border-image: linear-gradient(var(--angle),lightslategray, #61dafb) 33;
+  
   font-family: monospace;
+  animation:5s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to{
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
