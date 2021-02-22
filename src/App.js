@@ -5,13 +5,15 @@ import cheerio from "cheerio";
 import './App.css';
 
 function App() {
+  // instead of class App extends Component import useState
   let [names, setNames] = useState([]);
 
+  // instead of componentDidMount import useEffect
   useEffect(() => {
     rp("https://pokedex.org/")
       .then(html => {
-        let names = [];
-        let $ = cheerio.load(html);
+        let names = []; // set names to empty array
+        let $ = cheerio.load(html); // not sure but it's cheerio
 
         // find what element ids, classes, or tags you want from opening console in the browser
         // cheerio library lets you select elements similar to querySelector
@@ -19,13 +21,13 @@ function App() {
           let name = $(this)
             .prepend()
             .text();
-          names.push(name);
+          names.push(name); // pushes names to array
 
         });
-
-        setNames([names]);
+        // had to add ...(spread operator) to render individual list items
+        setNames([...names]);
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.log("crawl failed");
       });
   }, []);
@@ -38,7 +40,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <code>This is a web scraper demo.
+          The monsters listed below are from https://pokedex.org/.
+          </code>
         </p>
         <a
           className="App-link"
@@ -53,8 +57,9 @@ function App() {
         <ul>
           {names.map(name => {
             return (
-            <li key={name}>{name}</li>
-          )})}
+              <li key={name}>{name}</li>
+            )
+          })}
         </ul>
       </div>
 
@@ -64,5 +69,5 @@ function App() {
 
 export default App;
 
-// based on a template/tutorial from Robert Chen 
+// based on a tutorial from Robert Chen 
 // at https://dev.to/robghchen/how-to-scrape-a-static-website-2jbh
