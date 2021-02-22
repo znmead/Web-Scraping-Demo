@@ -63,3 +63,6 @@ function App() {
 }
 
 export default App;
+
+// based on a template/tutorial from Robert Chen 
+// at https://dev.to/robghchen/how-to-scrape-a-static-website-2jbh
