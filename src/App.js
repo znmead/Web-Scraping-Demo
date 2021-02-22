@@ -40,7 +40,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          <code>This is a web scraper demo.
+          <code>This is a web scraper demo built with React, Cheerio.js, and Request-Promise.
           The monsters listed below are from https://pokedex.org/.
           </code>
         </p>
@@ -53,7 +53,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <div>
+      <div className="container">
         <ul>
           {names.map(name => {
             return (
@@ -71,3 +71,8 @@ export default App;
 
 // based on a tutorial from Robert Chen 
 // at https://dev.to/robghchen/how-to-scrape-a-static-website-2jbh
+
+// Add to README: 
+// https://www.npmjs.com/package/request-promise
+// https://cheerio.js.org/
+// 
