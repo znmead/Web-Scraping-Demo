@@ -13,6 +13,8 @@ function App() {
         let names = [];
         let $ = cheerio.load(html);
 
+        // find what element ids, classes, or tags you want from opening console in the browser
+        // cheerio library lets you select elements similar to querySelector
         $("#monsters-list li span").each(function (i, element) {
           let name = $(this)
             .prepend()
@@ -49,9 +51,10 @@ function App() {
       </header>
       <div>
         <ul>
-          {names.map((name) => {
-            return <li key={name}>{name}</li>;
-          })}
+          {names.map(name => {
+            return (
+            <li key={name}>{name}</li>
+          )})}
         </ul>
       </div>
 
