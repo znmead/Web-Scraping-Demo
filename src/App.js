@@ -13,7 +13,7 @@ function App() {
         let names = [];
         let $ = cheerio.load(html);
 
-        $("#players-list li span").each(function (i, element) {
+        $("#monsters-list li span").each(function (i, element) {
           let name = $(this)
             .prepend()
             .text();
